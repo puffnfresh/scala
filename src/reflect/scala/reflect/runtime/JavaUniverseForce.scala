@@ -360,6 +360,7 @@ trait JavaUniverseForce { self: runtime.JavaUniverse  =>
     definitions.AnnotationClass
     definitions.ClassfileAnnotationClass
     definitions.StaticAnnotationClass
+    definitions.ImplicitWeightClass
     definitions.BridgeClass
     definitions.ElidableMethodClass
     definitions.ImplicitNotFoundClass

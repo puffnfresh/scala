@@ -857,7 +857,10 @@ trait Infer extends Checkable {
                                  (!phase.erasedTypes || covariantReturnOverride(ftpe1, ftpe2))) 1 else 0)
         val subClassCount = (if (isInProperSubClassOrObject(sym1, sym2)) 1 else 0) -
                             (if (isInProperSubClassOrObject(sym2, sym1)) 1 else 0)
-        specificCount + subClassCount > 0
+
+        val annotationCount = implicitWeight(sym1) - implicitWeight(sym2)
+
+        specificCount + subClassCount + annotationCount > 0
       }
     }
 

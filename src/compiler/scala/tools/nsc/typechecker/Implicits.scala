@@ -34,6 +34,10 @@ trait Implicits {
   import typingStack.{ printTyping }
   import typeDebug._
 
+  def implicitWeight(sym: Symbol): Int = {
+    (sym getAnnotation ImplicitWeightClass flatMap (_ intArg 0) getOrElse 0)
+  }
+
   def inferImplicit(tree: Tree, pt: Type, reportAmbiguous: Boolean, isView: Boolean, context: Context): SearchResult =
     inferImplicit(tree, pt, reportAmbiguous, isView, context, saveAmbiguousDivergent = true, tree.pos)
 

@@ -1087,6 +1087,8 @@ trait Definitions extends api.StandardDefinitions {
     lazy val ClassfileAnnotationClass   = requiredClass[scala.annotation.ClassfileAnnotation]
     lazy val StaticAnnotationClass      = requiredClass[scala.annotation.StaticAnnotation]
 
+    lazy val ImplicitWeightClass        = requiredClass[scala.annotation.implicitWeight]
+
     // Annotations
     lazy val BridgeClass                = requiredClass[scala.annotation.bridge]
     lazy val ElidableMethodClass        = requiredClass[scala.annotation.elidable]
